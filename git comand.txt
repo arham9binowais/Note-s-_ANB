@@ -1,0 +1,9 @@
+ git config --global user.name "arham9binowais"
+ git config --global user.email "arham9binowais@gmail.com"
+ git init
+ git add .
+ git status
+ git commit -m "ANB Notes logo"
+ git branch -M main
+ git remote add origin https://github.com/arham9binowais/Note-s-_ANB.git
+ git push -u origin main

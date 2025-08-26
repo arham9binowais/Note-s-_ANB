@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use the Inter font -->
+    <style>
+        nav{
+            width: 100%;
+            height: 200px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #f0f4f8; /* Light gray background */
+        }
+        arham {
+            /* Create a custom yellow color */
+            color: #FFD700;
+            font-size: larger; 
+        }
+       
+        
+        /* Keyframes for the bounce down animation */
+        @keyframes bounceDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            10% {
+                transform: translateY(-50%);
+            }
+            70% {
+                transform: translateY(10%);
+            }
+            85% {
+                transform: translateY(-5%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Main Navigation Container -->
+<nav class="bg-blue-800 text-white p-2 lg:p-3 rounded-b-xl shadow-lg animate-bounce-down">
+    <div class="w-full flex items-center justify-between px-4">
+        <!-- Logo and Brand Name -->
+        <div class="flex items-center space-x-2">
+            <!-- A simple SVG for the logo -->
+            <svg class="w-6 h-6 md:w-8 md:h-8 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5L12 2zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="text-lg md:text-xl font-bold logo-text"><arham> ANB's</arham><name> Education</name></span>
+        </div>
+
+        <!-- Mobile Menu Button - Visible on screens smaller than md -->
+        <div class="md:hidden flex items-center space-x-2">
+            <!-- Buttons for mobile -->
+            <div class="flex space-x-2">
+                <!-- Updated 'Sign Up' button to use flexible padding -->
+                <a href="#" class="bg-yellow-400 text-blue-900 font-semibold px-3 py-1 rounded-[50px] border hover:bg-sky-200 hover:text-yellow-400 hover:border-yellow-400 transition-colors duration-300 text-xs text-center">Sign Up</a>
+                <!-- Updated 'Login' button with flexible padding -->
+                <a href="#" class="border-2 border-white text-white font-semibold px-2 pt-[5px] pb-[5px] rounded-[50px] hover:bg-white hover:text-yellow-400 hover:border-yellow-400 transition-colors duration-300 text-xs text-center">Login</a>
+            </div>
+
+            <button id="mobile-menu-button" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Desktop Navigation Tabs and Buttons -->
+        <div id="nav-menu" class="hidden md:flex md:items-center md:space-x-6 lg:space-x-8">
+            <!-- Navigation Links -->
+            <ul class="flex flex-col md:flex-row md:space-x-3 lg:space-x-4 text-sm font-medium">
+                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Home</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">How to learn for paper</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Paper pattern</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Notes</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Result</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Result</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Blog</a></li>
+            </ul>
+
+            <!-- Buttons -->
+            <div class="flex flex-col md:flex-row md:space-x-3 lg:space-x-4 mt-2 md:mt-0">
+                <!-- Updated 'Sign up' button to use flexible padding -->
+                <a href="#" class="bg-yellow-400 text-blue-900 font-semibold px-4 py-1 rounded-[50px] border hover:bg-sky-200 hover:text-yellow-400 hover:border-yellow-400 transition-colors duration-300 mb-2 md:mb-0 transform hover:scale-105 text-center">Sign up</a>
+                <!-- Updated 'Login' button with flexible padding and hover color -->
+                <a href="#" class="border-2 border-white text-white font-semibold px-4 pt-[5px] pb-[5px] rounded-[50px] hover:bg-sky-200 hover:text-yellow-400 hover:border-yellow-400 transition-colors duration-300 mb-2 md:mb-0 transform hover:scale-105 text-center">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu - hidden by default, shown with JS -->
+    <div id="mobile-nav-menu" class="md:hidden hidden w-full mt-2 bg-blue-700 rounded-lg p-2 transition-all duration-300 ease-in-out">
+        <ul class="flex flex-col space-y-1 text-white font-medium">
+            <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Home</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">How to learn for paper</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Paper pattern</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Notes</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Result</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">News</a></li>
+                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Blog</a></li>
+        </ul>
+    </div>
+
+</nav>
+
+<script>
+    // Get the mobile menu button and the mobile navigation menu
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileNavMenu = document.getElementById('mobile-nav-menu');
+
+    // Add a click event listener to the button
+    mobileMenuButton.addEventListener('click', () => {
+        // Toggle the 'hidden' class on the mobile nav menu to show/hide it
+        mobileNavMenu.classList.toggle('hidden');
+    });
+</script>
+
+</body>
+</html>
