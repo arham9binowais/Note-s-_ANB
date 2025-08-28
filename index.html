@@ -7,42 +7,7 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Use the Inter font -->
-    <style>
-        nav{
-            width: 100%;
-            height: 200px;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            background-color: #f0f4f8; /* Light gray background */
-        }
-        arham {
-            /* Create a custom yellow color */
-            color: #FFD700;
-            font-size: larger; 
-        }
-       
-        
-        /* Keyframes for the bounce down animation */
-        @keyframes bounceDown {
-            0% {
-                transform: translateY(-100%);
-            }
-            10% {
-                transform: translateY(-50%);
-            }
-            70% {
-                transform: translateY(10%);
-            }
-            85% {
-                transform: translateY(-5%);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-    </style>
+
 </head>
 <body>
 
@@ -58,56 +23,37 @@
             <span class="text-lg md:text-xl font-bold logo-text"><arham> ANB's</arham><name> Education</name></span>
         </div>
 
-        <!-- Mobile Menu Button - Visible on screens smaller than md -->
-        <div class="md:hidden flex items-center space-x-2">
-            <!-- Buttons for mobile -->
-            <div class="flex space-x-2">
-                <!-- Updated 'Sign Up' button to use flexible padding -->
+        <!-- This entire section is now a flex container that will align items to the end -->
+        <div class="flex items-center space-x-6">
+            <!-- Navigation Links for Desktop -->
+            <!-- Navigation tabs are now hidden on smaller screens -->
+            <div id="nav-menu" class="hidden md:flex md:items-center md:space-x-6 lg:space-x-8">
+                <ul class="flex flex-row md:space-x-3 lg:space-x-4 text-sm font-medium">
+                    <!-- All tabs are now removed as requested -->
+                </ul>
+            </div>
+    
+            <!-- Buttons for all screen sizes -->
+            <div class="flex items-center space-x-2">
+                <!-- Buttons for mobile and desktop -->
                 <a href="#" class="bg-yellow-400 text-blue-900 font-semibold px-3 py-1 rounded-[50px] border hover:bg-sky-200 hover:text-yellow-400 hover:border-yellow-400 transition-colors duration-300 text-xs text-center">Sign Up</a>
-                <!-- Updated 'Login' button with flexible padding -->
-                <a href="#" class="border-2 border-white text-white font-semibold px-2 pt-[5px] pb-[5px] rounded-[50px] hover:bg-white hover:text-yellow-400 hover:border-yellow-400 transition-colors duration-300 text-xs text-center">Login</a>
+                <a href="#" class="border-2 border-white text-white font-semibold px-2 pt-[5px] pb-[5px] rounded-[50px] hover:bg-white hover:text-yellow-400 hover:border-yellow-400 transition-colors duration-300 text-xs text-center">Login</a><br>
+                <a href="#" class="bg-yellow-400 text-blue-900 font-semibold px-3 py-1 rounded-[50px] border hover:bg-sky-200 hover:text-yellow-400 hover:border-yellow-400 transition-colors duration-300 text-xs text-center">About Developer</a>
             </div>
 
-            <button id="mobile-menu-button" class="text-white focus:outline-none">
+            <!-- This is the menu icon, now on the far right and hidden on larger screens -->
+            <button id="mobile-menu-button" class="text-white focus:outline-none md:hidden">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
-        </div>
-
-        <!-- Desktop Navigation Tabs and Buttons -->
-        <div id="nav-menu" class="hidden md:flex md:items-center md:space-x-6 lg:space-x-8">
-            <!-- Navigation Links -->
-            <ul class="flex flex-col md:flex-row md:space-x-3 lg:space-x-4 text-sm font-medium">
-                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Home</a></li>
-                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">How to learn for paper</a></li>
-                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Paper pattern</a></li>
-                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Notes</a></li>
-                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Result</a></li>
-                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Result</a></li>
-                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Blog</a></li>
-            </ul>
-
-            <!-- Buttons -->
-            <div class="flex flex-col md:flex-row md:space-x-3 lg:space-x-4 mt-2 md:mt-0">
-                <!-- Updated 'Sign up' button to use flexible padding -->
-                <a href="#" class="bg-yellow-400 text-blue-900 font-semibold px-4 py-1 rounded-[50px] border hover:bg-sky-200 hover:text-yellow-400 hover:border-yellow-400 transition-colors duration-300 mb-2 md:mb-0 transform hover:scale-105 text-center">Sign up</a>
-                <!-- Updated 'Login' button with flexible padding and hover color -->
-                <a href="#" class="border-2 border-white text-white font-semibold px-4 pt-[5px] pb-[5px] rounded-[50px] hover:bg-sky-200 hover:text-yellow-400 hover:border-yellow-400 transition-colors duration-300 mb-2 md:mb-0 transform hover:scale-105 text-center">Login</a>
-            </div>
         </div>
     </div>
 
     <!-- Mobile Menu - hidden by default, shown with JS -->
     <div id="mobile-nav-menu" class="md:hidden hidden w-full mt-2 bg-blue-700 rounded-lg p-2 transition-all duration-300 ease-in-out">
         <ul class="flex flex-col space-y-1 text-white font-medium">
-            <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Home</a></li>
-                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">How to learn for paper</a></li>
-                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Paper pattern</a></li>
-                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Notes</a></li>
-                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Result</a></li>
-                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">News</a></li>
-                <li><a href="#" class="block px-4 py-2 hover:bg-sky-100 hover:text-yellow-400 mt-5 transition-all duration-300 transform hover:scale-110 border-b-4 border-b-transparent hover:border-b-yellow-400 rounded-t-[20px]">Blog</a></li>
+            <!-- All tabs are now removed as requested -->
         </ul>
     </div>
 
